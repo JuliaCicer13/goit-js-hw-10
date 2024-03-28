@@ -1,9 +1,8 @@
 
 import flatpickr from "flatpickr";
-
+import "flatpickr/dist/flatpickr.min.css";
 import iziToast from "izitoast";
-
-import { convertMs } from "./timeUtils";
+import "izitoast/dist/css/iziToast.min.css";
 
 
 const options = {
