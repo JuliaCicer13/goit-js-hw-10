@@ -33,6 +33,7 @@ const options = {
 flatpickr(dateTimePicker, options);
 
 
+
 startButton.addEventListener('click', function() {
   const selectedDate = new Date(dateTimePicker.value);
   const countdownInterval = setInterval(function() {
@@ -41,10 +42,10 @@ startButton.addEventListener('click', function() {
     if (timeDifference <= 0) {
       clearInterval(countdownInterval);
       updateTimerDisplay(0, 0, 0, 0);
-      startButton.disabled = true;
-      dateTimePicker.disabled = true;
+      startButton.disabled = true; 
+      dateTimePicker.disabled = true; 
     } else {
-      
+     
       const { days, hours, minutes, seconds } = convertMs(timeDifference);
       updateTimerDisplay(days, hours, minutes, seconds);
     }
