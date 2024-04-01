@@ -1,3 +1,4 @@
+
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import iziToast from "izitoast";
@@ -43,11 +44,15 @@ startButton.addEventListener('click', function() {
       startButton.disabled = true;
       dateTimePicker.disabled = true;
     } else {
-    
+      
       const { days, hours, minutes, seconds } = convertMs(timeDifference);
       updateTimerDisplay(days, hours, minutes, seconds);
     }
   }, 1000);
+
+  
+  startButton.disabled = true;
+  dateTimePicker.disabled = true;
 });
 
 
@@ -57,6 +62,7 @@ function updateTimerDisplay(days, hours, minutes, seconds) {
   document.querySelector('[data-minutes]').textContent = addLeadingZero(minutes);
   document.querySelector('[data-seconds]').textContent = addLeadingZero(seconds);
 }
+
 
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
