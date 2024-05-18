@@ -1,8 +1,7 @@
 
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
+
 
 
 const startButton = document.getElementById('startButton');
@@ -18,8 +17,7 @@ const options = {
     const selectedDate = selectedDates[0];
     const currentDate = new Date();
     if (selectedDate < currentDate) {
-      iziToast.error({
-        title: 'Error',
+      window.alert({
         message: 'Please choose a date in the future'
       });
       startButton.disabled = true;
