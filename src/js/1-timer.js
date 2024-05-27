@@ -9,7 +9,7 @@ let intervalId = null;
 const startButton = document.querySelector('[data-start]');
 const dateTimePicker = document.getElementById('datetime-picker');
 const clockFace = document.getElementById('timer');
-clockFace.textContent = '00:00:00:00';
+
 
 
 let initTime = 0;
@@ -54,6 +54,7 @@ startButton.addEventListener('click', function () {
     const diff = initTime - currentTime;
     if (diff <= 0) {
       clearInterval(intervalId);
+      clockFace.textContent = '00:00:00:00';
       startButton.disabled = false; 
       return;
     }
