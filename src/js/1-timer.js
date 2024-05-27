@@ -41,6 +41,14 @@ flatpickr(dateTimePicker, options);
 
 
 startButton.addEventListener('click', function () {
+
+  if (!dateTimePicker.value) {
+ 
+    iziToast.error({ message: 'Please choose a date' });
+    return;
+  }
+
+ 
   intervalId = setInterval(() => {
     const currentTime = Date.now();
     const diff = initTime - currentTime;
