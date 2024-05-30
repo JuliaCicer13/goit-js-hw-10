@@ -8,7 +8,7 @@ import "izitoast/dist/css/iziToast.min.css";
 let intervalId = null;
 const startButton = document.querySelector('[data-start]');
 const dateTimePicker = document.getElementById('datetime-picker');
-const clockFace = document.querySelector('timer');
+const clockFace = document.querySelector('.timer');
 
 
 
