@@ -33,7 +33,7 @@ const options = {
   },
 };
 
-
+ startButton.disabled = true;
 
 flatpickr(dateTimePicker, options);
 
