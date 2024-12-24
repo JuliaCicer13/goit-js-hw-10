@@ -6,7 +6,16 @@ import "izitoast/dist/css/iziToast.min.css";
 const startButton = document.querySelector('button[data-start]');
 const dataInput = document.querySelector('#datetime-picker');
 const timerDisplay = document.querySelector('.timer');
+const daysField = document.querySelector("[data-days]");
+const dataTimePicker = document.querySelector("#datatime-picker");
+const hoursField = document.querySelector("[data-hours]");
+const minutesField = document.querySelector("[data-minutes]");
+const secondsField = document.querySelector("[data-seconds]");
 
+
+let userSelectedDate = null;
+
+let timeInterval = null;
 
 function addLeadingZero(value)
 {
@@ -39,8 +48,6 @@ console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20
 
 
 
-
-flatpickr(selector, options);
  
 const options = {
   enableTime: true,
@@ -48,18 +55,31 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    const userSelectedDate = selectedDates[0];
-    console.log(userSelectedDate);
-  },
-
-  if (userSelectedDate = defaultDate) {
+    const selectedDates =
+      selectedDates[0];
+    
+     if (selectedDates <= new Date ()) {
     alert: ("Please choose a date in the future");
     
+startButton.disabled = true;
 
-  }
+  } else {
+  
+  startButton.disabled = false;
+  userSelectedDate =
+    selectedDates;
+    }
+  },
 };
+  
 
-function flatpickr() { };
+ 
+
+function flatpickr(dataTimePicker, options);
+
+
+
+
 
 
 startButton.addEventListener("click", handleTimer);
