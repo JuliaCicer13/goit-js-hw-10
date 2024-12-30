@@ -55,11 +55,13 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    const selectedDates =
+    const selectedDate =
       selectedDates[0];
     
      if (selectedDates <= new Date ()) {
-    alert: ("Please choose a date in the future");
+       iziToast.warning({
+         titel: "Invalid Date",
+         message: "Please choose a date in the future"});
     
 startButton.disabled = true;
 
@@ -75,18 +77,53 @@ startButton.disabled = true;
 
  
 
-function flatpickr(dataTimePicker, options);
+flatpickr(dataTimePicker, options);
 
 
+function startTimer() {
+  if (!userSelectedDate) return;
+
+  startButton.disabled = true;
+  dataTimePicker.disabled = true;
+
+  timeInterval = setInterval(() => {
 
 
+    const now = new Date();
+    const timeLeft = userSelectedDate - now; 
+    if (timeLeft <= 0) {
 
+      clearInterval(timeInterval);
+      dataTimePicker.disabled =
+        false;
+      startButton.disabled = true;
 
-startButton.addEventListener("click", handleTimer);
+      daysField.textContent = "00";
+      hoursField.textContent = "00";
+      minutesField.textContent = "00";
+      secondsField.textContent = "00";
 
-function handleTimer(event) {
-  event
+      iziToast.info({
+        titel: "Timer finished!",
+        message: "Your countdown is complited!"
+      });
+      return;
+    }
 
+    const { days, hours, minutes, seconds } = convertMs(timeLeft);
+
+    daysField.textContent = addLeadingZero(days);
+    hoursField.textContent = addLeadingZero(hours);
+    minutesField.textContent = addLeadingZero(minutes);
+    secondsField.textContent = addLeadingZero(seconds);
+
+  }, 1000);
 
 
 }
+
+startButton.addEventListener("click", startTimer);
+
+
+
+
