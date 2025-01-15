@@ -1,3 +1,3 @@
-import"./assets/modulepreload-polyfill-3cfb730f.js";import{i}from"./assets/vendor-77e16229.js";const t=document.querySelector(".form");t.addEventListener("submit",o);function o(m){m.preventDefault(),(e=>new Promise((r,s)=>{setTimeout(()=>{Math.random()==="fullfilled"?r(`✅ Fulfilled promise in ${e}ms`):s(`❌ Rejected promise in ${e}ms`)},e)}))(delay).then(e=>{i.show(e`message:
-  ✅ Fulfilled promise in ${delay}ms`)}).catch(e=>{i.show(e,`❌ Rejected promise in ${delay}ms`)})}
+import"./assets/modulepreload-polyfill-3cfb730f.js";import{i as s}from"./assets/vendor-77e16229.js";const o=document.querySelector(".form");o.addEventListener("submit",t);function t(r){r.preventDefault(),(e=>new Promise((i,m)=>{setTimeout(()=>{Math.random()==="fullfilled"?i(`✅ Fulfilled promise in ${e}ms`):m(`❌ Rejected promise in ${e}ms`)},e)}))(delay).then(e=>{s.show({title:"Error",message:`message
+  ✅ Fulfilled promise in ${delay}ms`,color:"green"})}).catch(e=>{s.show({titel:"Fullfield",message:`message ❌ Rejected promise in ${delay}ms`,color:"red"})})}
 //# sourceMappingURL=commonHelpers2.js.map
