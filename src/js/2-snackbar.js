@@ -33,20 +33,26 @@ reject(`❌ Rejected promise in ${delay}ms`);
 };
 
 makeOrder(delay)
-.then((message) =>{
+  .then((message) => {
 
-iziToast.show(message`message:
-  ✅ Fulfilled promise in ${delay}ms`, 
+    iziToast.show({
+      title: "Error",
+      message:`message
+  ✅ Fulfilled promise in ${delay}ms`,
+     color: "green",    
   
  
-);
+});
 
 })
 .catch((message) => {
 
-iziToast.show(message, `❌ Rejected promise in ${delay}ms`
+  iziToast.show({
+    titel: "Fullfield",
+    message: `message ❌ Rejected promise in ${delay}ms`,
+    color:"red",
  
-);
+  });
 
 
 });
