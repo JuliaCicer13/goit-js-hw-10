@@ -1,5 +1,5 @@
 
-import { iziToast } from "izitoast";
+import  iziToast  from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 
@@ -19,7 +19,7 @@ return new Promise((resolve, reject) => {
 
 setTimeout(( )=> {
 
-if ( Math.random() === "fullfilled") {
+if ( Math.random() > 0.5) {
 resolve(`✅ Fulfilled promise in ${delay}ms`);
 
 } else {
@@ -32,11 +32,11 @@ reject(`❌ Rejected promise in ${delay}ms`);
 
 };
 
-makeOrder(delay)
-  .then((message) => {
+makeOrder()
+  .then((delay) => {
 
     iziToast.show({
-      title: "Error",
+      title: "Fullfield",
       message:`message
   ✅ Fulfilled promise in ${delay}ms`,
      color: "green",    
@@ -45,10 +45,10 @@ makeOrder(delay)
 });
 
 })
-.catch((message) => {
+.catch((delay) => {
 
   iziToast.show({
-    titel: "Fullfield",
+    titel: "Error",
     message: `message ❌ Rejected promise in ${delay}ms`,
     color:"red",
  

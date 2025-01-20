@@ -1,13 +1,13 @@
 
-import flatpickr from "flatpickr";
+import  flatpickr  from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
-import iziToast from "izitoast";
+import  {iziToast}  from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 const startButton = document.querySelector('button[data-start]');
 const dataInput = document.querySelector('#datetime-picker');
 const timerDisplay = document.querySelector('.timer');
 const daysField = document.querySelector("[data-days]");
-const dataTimePicker = document.querySelector("#datatime-picker");
+const dataTimePicker = document.querySelector("#datetime-picker");
 const hoursField = document.querySelector("[data-hours]");
 const minutesField = document.querySelector("[data-minutes]");
 const secondsField = document.querySelector("[data-seconds]");
@@ -60,7 +60,7 @@ const options = {
     
      if (selectedDates <= new Date ()) {
        iziToast.warning({
-         titel: "Invalid Date",
+         title: "Invalid Date",
          message: "Please choose a date in the future"});
     
 startButton.disabled = true;
@@ -104,7 +104,7 @@ function startTimer() {
       secondsField.textContent = "00";
 
       iziToast.info({
-        titel: "Timer finished!",
+        title: "Timer finished!",
         message: "Your countdown is complited!"
       });
       return;
